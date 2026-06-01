@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Renovări și Amenajări Cluj-Napoca | Daniel</title>
+<title>Daniel Construct | Renovări și Amenajări Cluj-Napoca</title>
 
-<meta name="description" content="Renovări complete, finisaje interioare, gresie, faianță, gleturi, rigips, garduri și terase în Cluj-Napoca. Sună acum pentru ofertă.">
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<meta name="description" content="Renovări complete, finisaje interioare, gresie, faianță, rigips, zugrăveli și amenajări în Cluj-Napoca. Sună acum pentru ofertă gratuită.">
 
 <style>
 
@@ -16,11 +14,12 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:'Inter',sans-serif;
+font-family:Arial,sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#fff;
+background:#f8f8f8;
 color:#222;
 line-height:1.6;
 }
@@ -28,42 +27,33 @@ line-height:1.6;
 header{
 position:fixed;
 top:0;
+left:0;
 width:100%;
-background:white;
-box-shadow:0 2px 20px rgba(0,0,0,.08);
+background:#111;
+padding:15px 20px;
 z-index:999;
+box-shadow:0 2px 10px rgba(0,0,0,.2);
 }
 
 nav{
-max-width:1200px;
-margin:auto;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px;
+max-width:1200px;
+margin:auto;
 }
 
 .logo{
-font-size:1.3rem;
-font-weight:800;
-}
-
-.menu{
-display:flex;
-gap:25px;
-}
-
-.menu a{
-text-decoration:none;
-color:#333;
-font-weight:500;
+color:white;
+font-size:1.4rem;
+font-weight:700;
 }
 
 .hero{
 height:100vh;
 background:
-linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
-url("https://images.unsplash.com/photo-1504307651254-35680f356dfd");
+linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1600&q=80');
 background-size:cover;
 background-position:center;
 display:flex;
@@ -74,7 +64,7 @@ padding:20px;
 }
 
 .hero-content{
-max-width:800px;
+max-width:900px;
 color:white;
 }
 
@@ -85,32 +75,38 @@ margin-bottom:20px;
 
 .hero p{
 font-size:1.2rem;
-margin-bottom:30px;
+margin-bottom:35px;
 }
 
-.buttons{
+.btns{
 display:flex;
-justify-content:center;
 gap:15px;
+justify-content:center;
 flex-wrap:wrap;
 }
 
 .btn{
-padding:15px 30px;
+padding:18px 30px;
 border-radius:10px;
 text-decoration:none;
-font-weight:700;
+font-weight:bold;
 transition:.3s;
+display:inline-block;
 }
 
-.primary{
-background:#ff6600;
+.call{
+background:#ff6b00;
 color:white;
 }
 
-.secondary{
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+.offer{
 background:white;
-color:#222;
+color:#111;
 }
 
 .btn:hover{
@@ -118,17 +114,14 @@ transform:translateY(-3px);
 }
 
 section{
-padding:90px 20px;
-}
-
-.container{
+padding:80px 20px;
 max-width:1200px;
 margin:auto;
 }
 
-.title{
-font-size:2.2rem;
-margin-bottom:40px;
+h2{
+font-size:2rem;
+margin-bottom:30px;
 text-align:center;
 }
 
@@ -139,15 +132,10 @@ gap:20px;
 }
 
 .card{
-background:#fff;
+background:white;
 padding:25px;
 border-radius:15px;
 box-shadow:0 5px 20px rgba(0,0,0,.08);
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
 }
 
 .card h3{
@@ -155,36 +143,38 @@ margin-bottom:10px;
 }
 
 .about{
-background:#f8f8f8;
+background:white;
+border-radius:15px;
+padding:30px;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
 }
 
 .contact{
-background:#111;
-color:white;
 text-align:center;
 }
 
 .phone{
 font-size:2rem;
-font-weight:800;
-margin:20px 0;
+font-weight:bold;
+margin:15px 0;
 }
 
 .cta{
-display:inline-block;
-padding:18px 35px;
-background:#25d366;
+background:#111;
 color:white;
-text-decoration:none;
-border-radius:12px;
-font-weight:700;
+padding:50px 20px;
+text-align:center;
+}
+
+.cta h2{
+color:white;
 }
 
 footer{
-padding:30px;
-text-align:center;
-background:#000;
+background:#111;
 color:white;
+text-align:center;
+padding:25px;
 }
 
 .mobile-bar{
@@ -193,7 +183,7 @@ bottom:0;
 left:0;
 width:100%;
 display:flex;
-z-index:999;
+z-index:9999;
 }
 
 .mobile-bar a{
@@ -201,19 +191,19 @@ flex:1;
 padding:18px;
 text-align:center;
 text-decoration:none;
-font-weight:700;
+font-weight:bold;
 color:white;
 }
 
-.call{
-background:#ff6600;
+.mobile-call{
+background:#ff6b00;
 }
 
-.whatsapp{
-background:#25d366;
+.mobile-wa{
+background:#25D366;
 }
 
-.offer{
+.mobile-offer{
 background:#111;
 }
 
@@ -223,8 +213,8 @@ background:#111;
 font-size:2rem;
 }
 
-.menu{
-display:none;
+.phone{
+font-size:1.5rem;
 }
 
 }
@@ -236,13 +226,7 @@ display:none;
 
 <header>
 <nav>
-<div class="logo">Daniel Construcții</div>
-
-<div class="menu">
-<a href="#servicii">Servicii</a>
-<a href="#despre">Despre</a>
-<a href="#contact">Contact</a>
-</div>
+<div class="logo">Daniel Construct</div>
 </nav>
 </header>
 
@@ -253,24 +237,32 @@ display:none;
 <h1>Renovări și Amenajări Profesionale în Cluj-Napoca</h1>
 
 <p>
-Gresie, faianță, parchet, gleturi, rigips, garduri, terase și lucrări complete de construcții.
+Executăm lucrări complete de construcții și renovări la standarde ridicate. Consultanță gratuită și soluții adaptate fiecărui proiect.
 </p>
 
-<div class="buttons">
-<a href="tel:0742408959" class="btn primary">Sună Acum</a>
+<div class="btns">
 
-<a href="#servicii" class="btn secondary">Vezi Serviciile</a>
+<a href="tel:0742408959" class="btn call">
+SUNĂ ACUM
+</a>
+
+<a href="https://wa.me/40742408959" class="btn whatsapp">
+WHATSAPP
+</a>
+
+<a href="#contact" class="btn offer">
+CERE OFERTĂ
+</a>
+
 </div>
 
 </div>
 
 </section>
 
-<section id="servicii">
+<section>
 
-<div class="container">
-
-<h2 class="title">Serviciile Noastre</h2>
+<h2>Serviciile Noastre</h2>
 
 <div class="services">
 
@@ -281,17 +273,22 @@ Gresie, faianță, parchet, gleturi, rigips, garduri, terase și lucrări comple
 
 <div class="card">
 <h3>Parchet și Plinte</h3>
-<p>Montaj precis și finisaje de calitate.</p>
+<p>Finisaje moderne și execuție atentă la detalii.</p>
 </div>
 
 <div class="card">
 <h3>Gleturi și Zugrăveli</h3>
-<p>Pereți perfecți și finisaje moderne.</p>
+<p>Pereți perfect finisați și vopsitorii interioare.</p>
 </div>
 
 <div class="card">
 <h3>Rigips</h3>
-<p>Tavane false și compartimentări interioare.</p>
+<p>Tavane false și compartimentări din gips-carton.</p>
+</div>
+
+<div class="card">
+<h3>Tencuieli și Șape</h3>
+<p>Lucrări complete pentru construcții și renovări.</p>
 </div>
 
 <div class="card">
@@ -300,39 +297,56 @@ Gresie, faianță, parchet, gleturi, rigips, garduri, terase și lucrări comple
 </div>
 
 <div class="card">
-<h3>Structuri și Construcții</h3>
-<p>Execuție completă pentru proiecte rezidențiale.</p>
+<h3>Confecții Metalice</h3>
+<p>Balustrade, structuri metalice și elemente personalizate.</p>
 </div>
 
+<div class="card">
+<h3>Structuri și Construcții</h3>
+<p>Execuție profesională pentru proiecte rezidențiale și comerciale.</p>
 </div>
 
 </div>
 
 </section>
 
-<section id="despre" class="about">
+<section>
 
-<div class="container">
+<div class="about">
 
-<h2 class="title">Despre Noi</h2>
+<h2>Despre Noi</h2>
 
 <p>
-Daniel activează pe OLX din 2018 și oferă servicii profesionale de construcții și renovări în Cluj-Napoca și împrejurimi.
+Firmă de construcții cu experiență ce execută o gamă variată de lucrări la cele mai înalte standarde. Oferim consultanță pe toată perioada lucrării pentru alegerea celor mai bune soluții tehnice și estetice.
 </p>
 
 <br>
 
 <p>
-Beneficiați de consultanță pe toată perioada lucrării pentru alegerea celor mai bune soluții tehnice și estetice.
+Activ pe OLX din aprilie 2018, Daniel și echipa sa realizează lucrări pentru apartamente, case și spații comerciale în Cluj-Napoca și împrejurimi.
 </p>
 
 </div>
 
 </section>
 
-<section id="contact" class="contact">
+<section class="cta">
 
-<div class="container">
+<h2>Ai un proiect?</h2>
+
+<p>
+Contactează-ne acum pentru o ofertă gratuită.
+</p>
+
+<br>
+
+<a href="tel:0742408959" class="btn call">
+074 240 8959
+</a>
+
+</section>
+
+<section id="contact" class="contact">
 
 <h2>Contact</h2>
 
@@ -344,8 +358,20 @@ Beneficiați de consultanță pe toată perioada lucrării pentru alegerea celor
 
 <br>
 
-<a href="tel:0742408959" class="cta">
+<p>
+Daniel • OLX din aprilie 2018
+</p>
+
+<br>
+
+<div class="btns">
+
+<a href="tel:0742408959" class="btn call">
 Sună Acum
+</a>
+
+<a href="https://wa.me/40742408959" class="btn whatsapp">
+WhatsApp
 </a>
 
 </div>
@@ -354,22 +380,22 @@ Sună Acum
 
 <footer>
 
-Daniel Construcții © 2026
+© 2026 Daniel Construct • Renovări și Amenajări Cluj-Napoca
 
 </footer>
 
 <div class="mobile-bar">
 
-<a href="tel:0742408959" class="call">
-Sună
+<a href="tel:0742408959" class="mobile-call">
+SUNĂ
 </a>
 
-<a href="https://wa.me/40742408959" class="whatsapp">
-WhatsApp
+<a href="https://wa.me/40742408959" class="mobile-wa">
+WHATSAPP
 </a>
 
-<a href="#contact" class="offer">
-Ofertă
+<a href="#contact" class="mobile-offer">
+OFERTĂ
 </a>
 
 </div>
