@@ -1,0 +1,351 @@
+/* ==========================================================================
+   1. Variabile Globale & Setări de Bază (Design System)
+   ========================================================================== */
+:root {
+    /* Paleta de Culori */
+    --primary: #ff6b00;        /* Portocaliu Industrial (Accent) */
+    --primary-glow: rgba(255, 107, 0, 0.4);
+    --success: #25D366;        /* Verde WhatsApp */
+    --success-glow: rgba(37, 211, 102, 0.4);
+    
+    --dark: #111111;           /* Negru Mat (Fundal principal) */
+    --dark-deep: #0a0a0a;      /* Negru mai închis (Footer) */
+    --gray: #1f2937;           /* Gri Închis (Carduri pe dark mode) */
+    --gray-light: #374151;     /* Border-uri subtile */
+    
+    --white: #ffffff;
+    --bg-light: #f8fafc;       /* Alb murdar pentru secțiuni deschise */
+    --text-muted: #9ca3af;
+    
+    /* Tipografie & Structură */
+    --font-main: 'Inter', sans-serif;
+    --radius-sm: 8px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    
+    /* Animații */
+    --transition-smooth: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    --transition-fast: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+}
+
+body {
+    font-family: var(--font-main);
+    background-color: var(--dark);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden; /* Previne scroll-ul orizontal pe mobil */
+}
+
+/* Utilități Culori & Fundaluri */
+.bg-dark { background-color: var(--dark); color: var(--white); }
+.bg-dark-deep { background-color: var(--dark-deep); }
+.bg-white { background-color: var(--bg-light); color: var(--dark); }
+.text-dark { color: var(--dark); }
+.text-white { color: var(--white); }
+.text-gray { color: var(--text-muted); }
+
+/* Container standard */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 100px 0;
+}
+
+.text-center { text-align: center; }
+.mt-8 { margin-top: 2rem; }
+.mt-12 { margin-top: 3rem; }
+.mb-8 { margin-bottom: 2rem; }
+
+/* ==========================================================================
+   2. Tipografie & Titluri
+   ========================================================================== */
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+}
+
+.section-subtitle {
+    font-size: 1.125rem;
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ==========================================================================
+   3. Butoane (Premium, Hover Effects)
+   ========================================================================== */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 28px;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    font-size: 1rem;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-success {
+    background-color: var(--success);
+    color: var(--white);
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--dark);
+}
+
+/* Glow Effect la Hover */
+.btn.glow-effect:hover {
+    transform: translateY(-3px);
+}
+.btn-primary.glow-effect:hover {
+    box-shadow: 0 10px 25px var(--primary-glow);
+}
+.btn-success.glow-effect:hover {
+    box-shadow: 0 10px 25px var(--success-glow);
+}
+
+.btn-large {
+    padding: 18px 40px;
+    font-size: 1.125rem;
+}
+
+/* ==========================================================================
+   4. Navbar (Glassmorphism pe scroll)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 25px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    transition: var(--transition-smooth);
+    background: transparent;
+}
+
+.navbar.scrolled {
+    padding: 15px 5%;
+    background: rgba(17, 17, 17, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--white);
+}
+
+.lang-btn {
+    background: transparent;
+    color: var(--white);
+    border: none;
+    font-family: inherit;
+    font-weight: 600;
+    margin-left: 15px;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: var(--transition-fast);
+}
+
+.lang-btn:hover { opacity: 0.8; }
+.lang-btn.active {
+    opacity: 1;
+    color: var(--primary);
+}
+
+/* ==========================================================================
+   5. Hero Section (Cinematic Overlay)
+   ========================================================================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 80px; /* offset for navbar */
+    overflow: hidden;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    /* Înlocuiește URL-ul de mai jos cu poza ta de portofoliu sau stock premium */
+    background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1920&auto=format&fit=crop') center/cover no-repeat;
+    animation: kenBurns 20s infinite alternate linear;
+    z-index: 1;
+}
+
+/* Zoom lent pe fundal */
+@keyframes kenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.05); }
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(17,17,17,0.9) 0%, rgba(17,17,17,0.6) 50%, rgba(17,17,17,0.3) 100%);
+    z-index: 2;
+}
+
+.hero-content {
+    z-index: 10;
+    max-width: 800px;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+    font-size: 1.25rem;
+    color: #d1d5db;
+    margin-bottom: 2.5rem;
+    max-width: 90%;
+}
+
+.cta-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   6. Secțiunea "Despre Noi" (Split Layout)
+   ========================================================================== */
+.split-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 500px;
+    background-size: cover;
+    background-position: center;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 30px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    line-height: 1;
+}
+.stat-item span:nth-child(2) {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--primary);
+    margin-top: -35px; /* Aliniază "+" lângă număr */
+    margin-left: 35px;
+    position: relative;
+    top: -5px;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 15px;
+}
+
+/* ==========================================================================
+   7. Secțiunea "Servicii" (Grid Premium Dark)
+   ========================================================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--gray);
+    padding: 40px 30px;
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    text-align: left;
+    transition: var(--transition-smooth);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4), 0 0 15px rgba(255, 107, 0, 0.1);
+}
+
+.service-icon {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    display: inline-block;
+}
+
+.service-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-muted);
+}
+
+/* ==========================================================================
+   8. Portofoliu (Masonry
